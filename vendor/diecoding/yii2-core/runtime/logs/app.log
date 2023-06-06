@@ -1,0 +1,170 @@
+2020-02-09 10:30:05 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "messages". in E:\packages\yii2-core\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('messages', Array)
+#1 E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('messages', Array)
+#2 E:\packages\yii2-core\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 E:\packages\yii2-core\yii(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "messages". in E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('messages', Array)
+#1 E:\packages\yii2-core\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 E:\packages\yii2-core\yii(20): yii\base\Application->run()
+#3 {main}
+2020-02-09 10:30:04 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Sugeng Sulistiyawan\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '132190619240317589'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'SSULISTIYAWAN'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'GOPATH' => 'C:\\Users\\Sugeng Sulistiyawan\\go'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Sugeng Sulistiyawan'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local'
+    'LOGONSERVER' => '\\\\SSULISTIYAWAN'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Sugeng Sulistiyawan\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Sugeng Sulistiyawan\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Go\\bin;C:\\ProgramData\\chocolatey\\bin;E:\\xampp7311\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\flutter\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Ruby26-x64\\bin;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Sugeng Sulistiyawan\\go\\bin;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Roaming\\npm;E:\\gammu\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 69 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '4501'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\SUGENG~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\SUGENG~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'SSULISTIYAWAN'
+    'USERDOMAIN_ROAMINGPROFILE' => 'SSULISTIYAWAN'
+    'USERNAME' => 'Sugeng Sulistiyawan'
+    'USERPROFILE' => 'C:\\Users\\Sugeng Sulistiyawan'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'DetectorsMessageBoxErrors'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.42.0'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1581240604.1106
+    'REQUEST_TIME' => 1581240604
+    'argv' => [
+        0 => 'yii'
+        1 => 'messages'
+    ]
+    'argc' => 2
+]
+2020-02-09 10:33:07 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "messages". in E:\packages\yii2-core\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('messages', Array)
+#1 E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('messages', Array)
+#2 E:\packages\yii2-core\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 E:\packages\yii2-core\yii(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "messages". in E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 E:\packages\yii2-core\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('messages', Array)
+#1 E:\packages\yii2-core\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 E:\packages\yii2-core\yii(20): yii\base\Application->run()
+#3 {main}
+2020-02-09 10:33:07 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Sugeng Sulistiyawan\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '132190619240317589'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'SSULISTIYAWAN'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'GOPATH' => 'C:\\Users\\Sugeng Sulistiyawan\\go'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Sugeng Sulistiyawan'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local'
+    'LOGONSERVER' => '\\\\SSULISTIYAWAN'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\Sugeng Sulistiyawan\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Sugeng Sulistiyawan\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Python27\\;C:\\Python27\\Scripts;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Go\\bin;C:\\ProgramData\\chocolatey\\bin;E:\\xampp7311\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\flutter\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Ruby26-x64\\bin;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Sugeng Sulistiyawan\\go\\bin;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Sugeng Sulistiyawan\\AppData\\Roaming\\npm;E:\\gammu\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 69 Stepping 1, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '4501'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\SUGENG~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\SUGENG~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'SSULISTIYAWAN'
+    'USERDOMAIN_ROAMINGPROFILE' => 'SSULISTIYAWAN'
+    'USERNAME' => 'Sugeng Sulistiyawan'
+    'USERPROFILE' => 'C:\\Users\\Sugeng Sulistiyawan'
+    'windir' => 'C:\\Windows'
+    '__COMPAT_LAYER' => 'DetectorsMessageBoxErrors'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.42.0'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1581240787.7895
+    'REQUEST_TIME' => 1581240787
+    'argv' => [
+        0 => 'yii'
+        1 => 'messages'
+    ]
+    'argc' => 2
+]
