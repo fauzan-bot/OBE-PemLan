@@ -27,14 +27,15 @@ class RefMahasiswa extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public static function getDb() {
+    public static function getDb()
+    {
         $prodi = Yii::$app->user->identity->prodigy->prodi;
         if (Yii::$app->user->identity->prodigy->prodi == 'mesin') {
             return Yii::$app->db;
         }
         return Yii::$app->$prodi;
     }
-    
+
     public static function tableName()
     {
         return 'ref_mahasiswa';
@@ -58,12 +59,13 @@ class RefMahasiswa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['angkatan', 'status'], 'integer'],
+            [['angkatan', 'status', 'total_sks'], 'integer'],
             [['nim', 'nama', 'angkatan', 'status'], 'required', 'message' => '{attribute} tidak boleh kosong'],
             [['created_at', 'updated_at'], 'safe'],
             [['nim'], 'string', 'max' => 16],
             [['nama'], 'string', 'max' => 128],
             [['created_user', 'updated_user'], 'string', 'max' => 255],
+            [['ttl', 'tgl_masuk', 'tgl_lulus', 'no_skpi'], 'string', 'max' => 111],
         ];
     }
 
@@ -82,6 +84,11 @@ class RefMahasiswa extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
             'created_user' => 'Created User',
             'updated_user' => 'Updated User',
+            'ttl' => 'Tempat, Tanggal Lahir',
+            'tgl_masuk' => 'Tanggal Masuk',
+            'tgl_lulus' => 'Tanggal Lulus',
+            'total_sks' => 'Total SKS',
+            'no_skpi' => 'Nomor SKPI',
         ];
     }
 
@@ -111,6 +118,4 @@ class RefMahasiswa extends \yii\db\ActiveRecord
             ->viaTable(RefCpmk::tableName(), ['id' => 'id_ref_cpmk'])
             ->viaTable(CapaianMahasiswa::tableName(), ['id_ref_mahasiswa' => 'id']);
     }
-
-    
 }

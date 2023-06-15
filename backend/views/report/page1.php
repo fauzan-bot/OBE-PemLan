@@ -29,79 +29,79 @@ $_col_width = 10;
 ?>
 
 <body style="background: url('images/background_skpi.png');background-image-resolution: from-image;">
-<?php  
-                $tgl = ucfirst($data['setupPrint']['tgl_lulus']);
-                $cc = strlen($tgl);
-                for ($x = 3; $x <= $cc; $x++) {
-                    if (substr($tgl,$x,2) == "20"){
-                        $bln = substr($tgl,3,$x-4);
-                        $thn = substr($tgl,$x-1);
-                    }
-                }
-                if($bln == "January") $bln = "Januari";
-                if($bln == "February") $bln = "Februari";
-				if($bln == "March") $bln = "Maret";
-				if($bln == "April") $bln = "April";
-				if($bln == "May") $bln = "Mei";
-				if($bln == "June") $bln = "Juni";
-				if($bln == "July") $bln = "Juli";
-				if($bln == "August") $bln = "Agustus";
-				if($bln == "September") $bln = "September";
-				if($bln == "October") $bln = "Oktober";
-				if($bln == "November") $bln = "November";
-				if($bln == "December") $bln = "Desember";
-                $tgle =  substr($tgl,0,3) . $bln . $thn;
-            ?> 
-<?php  
-                $tglm = ucfirst($data['setupPrint']['tgl_masuk']);
-                $ccm = strlen($tglm);
-                for ($xm = 3; $xm <= $ccm; $xm++) {
-                    if (substr($tglm,$xm,2) == "20"){
-                        $blnm = substr($tglm,3,$xm-4);
-                        $thnm = substr($tglm,$xm-1);
-                    }
-                }
-                if($blnm == "January") $blnm = "Januari";
-                if($blnm == "February") $blnm = "Februari";
-				if($blnm == "March") $blnm = "Maret";
-				if($blnm == "April") $blnm = "April";
-				if($blnm == "May") $blnm = "Mei";
-				if($blnm == "June") $blnm = "Juni";
-				if($blnm == "July") $blnm = "Juli";
-				if($blnm == "August") $blnm = "Agustus";
-				if($blnm == "September") $blnm = "September";
-				if($blnm == "October") $blnm = "Oktober";
-				if($blnm == "November") $blnm = "November";
-				if($blnm == "December") $blnm = "Desember";
-                $tglem =  substr($tglm,0,3) . $blnm . $thnm;
-            ?> 
-<?php  
-                $tglttl = ucfirst($data['setupPrint']['ttl']);
-                $ccttl = strlen($tglttl);
-                for ($xttl = 0; $xttl <= $ccttl; $xttl++) {
-                    if(substr($tglttl,$xttl,1)==","){
-                      $tml =  substr($tglttl,0,$xttl);
-                      $xd = $xttl+4;
-                      $tl = (int)substr($tglttl,$xttl+1) ;
-                      $blnttl = substr($tglttl,$xd,$ccttl-5-$xd);
-                      $thnttl =  (int)substr($tglttl,$ccttl-5);
-                    }
-                  }
-                if($blnttl == " Januari") $blnttl = " January";
-                if($blnttl == " Februari") $blnttl = " February";
-		if($blnttl == " Maret") $blnttl = " March";
-		if($blnttl == " April") $blnttl = " April";
-		if($blnttl == " Mei") $blnttl = " May";
-		if($blnttl == " Juni") $blnttl = " June";
-		if($blnttl == " Juli") $blnttl = " July";
-		if($blnttl == " Agustus") $blnttl = " August";
-		if($blnttl == " September") $blnttl = " September";
-		if($blnttl == " Oktober") $blnttl = " October";
-		if($blnttl == " November") $blnttl = " November";
-		if($blnttl == " Desember") $blnttl = " December";
+    <?php
+    $tgl = ucfirst($data['setupPrint']['tgl_lulus']);
+    $cc = strlen($tgl);
+    for ($x = 3; $x <= $cc; $x++) {
+        if (substr($tgl, $x, 2) == "20") {
+            $bln = substr($tgl, 3, $x - 4);
+            $thn = substr($tgl, $x - 1);
+        }
+    }
+    if ($bln == "January") $bln = "Januari";
+    if ($bln == "February") $bln = "Februari";
+    if ($bln == "March") $bln = "Maret";
+    if ($bln == "April") $bln = "April";
+    if ($bln == "May") $bln = "Mei";
+    if ($bln == "June") $bln = "Juni";
+    if ($bln == "July") $bln = "Juli";
+    if ($bln == "August") $bln = "Agustus";
+    if ($bln == "September") $bln = "September";
+    if ($bln == "October") $bln = "Oktober";
+    if ($bln == "November") $bln = "November";
+    if ($bln == "December") $bln = "Desember";
+    $tgle =  substr($tgl, 0, 3) . $bln . $thn;
+    ?>
+    <?php
+    $tglm = ucfirst($data['setupPrint']['tgl_masuk']);
+    $ccm = strlen($tglm);
+    for ($xm = 3; $xm <= $ccm; $xm++) {
+        if (substr($tglm, $xm, 2) == "20") {
+            $blnm = substr($tglm, 3, $xm - 4);
+            $thnm = substr($tglm, $xm - 1);
+        }
+    }
+    if ($blnm == "January") $blnm = "Januari";
+    if ($blnm == "February") $blnm = "Februari";
+    if ($blnm == "March") $blnm = "Maret";
+    if ($blnm == "April") $blnm = "April";
+    if ($blnm == "May") $blnm = "Mei";
+    if ($blnm == "June") $blnm = "Juni";
+    if ($blnm == "July") $blnm = "Juli";
+    if ($blnm == "August") $blnm = "Agustus";
+    if ($blnm == "September") $blnm = "September";
+    if ($blnm == "October") $blnm = "Oktober";
+    if ($blnm == "November") $blnm = "November";
+    if ($blnm == "December") $blnm = "Desember";
+    $tglem =  substr($tglm, 0, 3) . $blnm . $thnm;
+    ?>
+    <?php
+    $tglttl = ucfirst($data['setupPrint']['ttl']);
+    $ccttl = strlen($tglttl);
+    for ($xttl = 0; $xttl <= $ccttl; $xttl++) {
+        if (substr($tglttl, $xttl, 1) == ",") {
+            $tml =  substr($tglttl, 0, $xttl);
+            $xd = $xttl + 4;
+            $tl = (int)substr($tglttl, $xttl + 1);
+            $blnttl = substr($tglttl, $xd, $ccttl - 5 - $xd);
+            $thnttl =  (int)substr($tglttl, $ccttl - 5);
+        }
+    }
+    if ($blnttl == " Januari") $blnttl = " January";
+    if ($blnttl == " Februari") $blnttl = " February";
+    if ($blnttl == " Maret") $blnttl = " March";
+    if ($blnttl == " April") $blnttl = " April";
+    if ($blnttl == " Mei") $blnttl = " May";
+    if ($blnttl == " Juni") $blnttl = " June";
+    if ($blnttl == " Juli") $blnttl = " July";
+    if ($blnttl == " Agustus") $blnttl = " August";
+    if ($blnttl == " September") $blnttl = " September";
+    if ($blnttl == " Oktober") $blnttl = " October";
+    if ($blnttl == " November") $blnttl = " November";
+    if ($blnttl == " Desember") $blnttl = " December";
 
-                $tglettl =  $tl . $blnttl . $thnttl;
-            ?>
+    $tglettl =  $tl . $blnttl . $thnttl;
+    ?>
     <div class="row">
         <table class="table">
             <tr>
@@ -110,7 +110,7 @@ $_col_width = 10;
                     <i style="font-size:13px;color:dark-grey"> Departement of <?= ucfirst($data['setupAplikasi']->prodi_en) ?> </i>
                 </td>
                 <td rowspan="2">
-                    <p style="font-size:15px;">Nomor: <?= ucfirst($data['setupPrint']['noskpi']) ?>/UN27.8/PP/<?= date("Y", strtotime(ucfirst($data['setupPrint']['tgl_lulus'])))?></p>                    <i style="font-size:13px;color:dark-grey">Number</i>
+                    <p style="font-size:15px;">Nomor: <?= ucfirst($data['setupPrint']['noskpi']) ?>/UN27.8/PP/<?= date("Y", strtotime(ucfirst($data['setupPrint']['tgl_lulus']))) ?></p> <i style="font-size:13px;color:dark-grey">Number</i>
                 </td>
             </tr>
             <tr>
@@ -172,7 +172,7 @@ $_col_width = 10;
                 </td>
                 <td style="width: <?= $isi ?>%;"></td>
                 <td>
-                    <p style="font-size:<?= $_isi_font ?>px;"> &nbsp;&nbsp;<?= $tglem ?> <i style="font-size:<?= $_isi_font ?>px;color:dark-grey">/ <?= date("F d, Y", strtotime(ucfirst($data['setupPrint']['tgl_masuk'])))?></i> </p>
+                    <p style="font-size:<?= $_isi_font ?>px;"> &nbsp;&nbsp;<?= $tglem ?> <i style="font-size:<?= $_isi_font ?>px;color:dark-grey">/ <?= date("F d, Y", strtotime(ucfirst($data['setupPrint']['tgl_masuk']))) ?></i> </p>
                 </td>
             </tr>
             <tr>
@@ -198,7 +198,7 @@ $_col_width = 10;
                 </td>
                 <td style="width: <?= $isi ?>%;"></td>
                 <td>
-                    <p style="font-size:<?= $_isi_font ?>px;"> &nbsp;&nbsp;<?= $tgle ?> <i style="font-size:<?= $_isi_font ?>px;color:dark-grey">/ <?= date("F d, Y", strtotime(ucfirst($data['setupPrint']['tgl_lulus'])))?></i> </p>
+                    <p style="font-size:<?= $_isi_font ?>px;"> &nbsp;&nbsp;<?= $tgle ?> <i style="font-size:<?= $_isi_font ?>px;color:dark-grey">/ <?= date("F d, Y", strtotime(ucfirst($data['setupPrint']['tgl_lulus']))) ?></i> </p>
                 </td>
             </tr>
             <tr>
@@ -220,7 +220,7 @@ $_col_width = 10;
                 <td style="width: <?= $head_width ?>%;height: 75px;"></td>
                 <td style="width: <?= $isi ?>%;"></td>
                 <td style="vertical-align:top; width: 45%;">
-                    <p style="font-size:<?= $_isi_font ?>px;"> <?= ucfirst($data['setupPrint']['ttl']) ?> <i style="font-size:<?= $_isi_font ?>px;color:dark-grey">/ <?=$tml . ", " . date("F d, Y", strtotime($tglettl)) ?></i>  </p>
+                    <p style="font-size:<?= $_isi_font ?>px;"> <?= ucfirst($data['setupPrint']['ttl']) ?> <i style="font-size:<?= $_isi_font ?>px;color:dark-grey">/ <?= $tml . ", " . date("F d, Y", strtotime($tglettl)) ?></i> </p>
                 </td>
                 <td style="width: <?= $isi ?>%;"></td>
                 <td style="vertical-align:top">
@@ -377,5 +377,7 @@ $_col_width = 10;
                 &nbsp;&nbsp;HALAMAN 1 DARI 3 <i style="font-size:10px;color:white"> / PAGE 1 OF 3</i>
             </p>
         </div>
-    </div></body>
+    </div>
+</body>
+
 </html>

@@ -18,6 +18,7 @@ use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\helpers\Html;
 use yii\web\Response;
+use yii\web\NotFoundHttpException;
 
 class ReportController extends Controller
 {
@@ -104,14 +105,14 @@ class ReportController extends Controller
             $semester1 = $total_bulan / 6;
             $semester = floor($semester1);
             $total_bulan = $total_bulan - ($semester * 6);
-	    $total_bulan = $total_bulan + 1;
-                if ($total_bulan == 6) {
-                    $semester = $semester + 1;
-                    $total_bulan = 0;
-                }
+            $total_bulan = $total_bulan + 1;
+            if ($total_bulan == 6) {
+                $semester = $semester + 1;
+                $total_bulan = 0;
+            }
 
-            $data['total_bulan']= $total_bulan;
-            $data['semester']= $semester;
+            $data['total_bulan'] = $total_bulan;
+            $data['semester'] = $semester;
 
             // echo '<pre>';
             // print_r("Total Hari =" . $total_hari);
@@ -191,5 +192,101 @@ class ReportController extends Controller
         echo '<pre>';
         print_r($array);
         exit;
+    }
+
+    public function actionSavexx($jk)
+    {
+        $model = $this->findModel($jk);
+        // Mengecek apakah request adalah POST
+        if ($model->load(Yii::$app->request->post())) {
+            // Mengambil data dari POST request
+            $nama = Yii::$app->request->post('nama');
+            $nim = Yii::$app->request->post('nim');
+            $ttl = Yii::$app->request->post('ttl');
+            $tgl_masuk = Yii::$app->request->post('tgl_masuk');
+            $tgl_lulus = Yii::$app->request->post('tgl_lulus');
+            $total_sks = Yii::$app->request->post('total_sks');
+            $no_skpi = Yii::$app->request->post('no_skpi');
+
+            // Lakukan validasi data jika diperlukan
+            // Simpan data ke database menggunakan model atau metode lainnya
+            // Contoh: menggunakan ActiveRecord
+            $model = new RefMahasiswa(); // Ganti "YourModel" dengan model yang sesuai
+            $model->nama = $nama;
+            $model->nim = $nim;
+            $model->ttl = $ttl;
+            $model->tgl_masuk = $tgl_masuk;
+            $model->tgl_lulus = $tgl_lulus;
+            $model->total_sks = $total_sks;
+            $model->no_skpi = $no_skpi;
+            $model->save();
+
+            return $this->redirect(['landing-skpi', 'jk' => $model->id]);
+        }
+        return $this->render('landing-skpi', [
+            'data' => $model,
+        ]);
+    }
+
+    public function actionSave($jk)
+    {
+        $model = $this->findModel($jk);
+
+        // Check if the request is a POST request and the model is loaded with data
+        if ($model->load(Yii::$app->request->post())) {
+            // Save the model
+            if ($model->save()) {
+                // Redirect to the landing-skpi page with the saved model ID
+                return $this->redirect(['landing-skpi', 'jk' => $model->id]);
+            } else {
+                // Handle the case when saving fails
+                Yii::$app->session->setFlash('error', 'Failed to save data.');
+            }
+        }
+
+        return $this->render('landing-skpi', [
+            'data' => $model,
+        ]);
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = RefMahasiswa::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    // public function actionUpdate($jk)
+    // {
+    //     $model = $this->findModel($jk);
+
+    //     if ($model->load(Yii::$app->request->post())) {
+    //         $model->updated_user = Yii::$app->user->identity->username;
+    //         $model->save();
+    //         Yii::$app->session->setFlash('warning', [['Update', 'Data Berhasil Diperbarui']]);
+    //         return $this->redirect(['monev-cpl/individual', 'id' => $model->id]);
+    //     }
+
+    //     return $this->render('landing-skpi', [
+    //         'data' => $model,
+    //     ]);
+    // }
+
+    public function actionUpdate($jk)
+    {
+        $model = RefMahasiswa::findOne($jk);
+        if (!$model) {
+            throw new NotFoundHttpException('Data not found.');
+        }
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save();
+            Yii::$app->session->setFlash('success', 'Data saved successfully.');
+            return $this->redirect(['monev-cpl/individual', 'jk' => $model->id]);
+        }
+
+        return $this->render('landing-skpi', ['data' => $model]);
     }
 }

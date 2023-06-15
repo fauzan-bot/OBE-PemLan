@@ -201,7 +201,8 @@ $this->title = 'Capaian Pembelajaran Lulusan Per Individu';
 									'jk' => $id_mahasiswa
 								], ['class' => 'btn btn-success']) ?>
 								<a id="download" download="ChartImage.jpg" class="btn btn-primary float-right bg-flat-color-1" title="Download">
-									<i class="fa fa-download"></i>
+									<!-- <i class="fa fa-download"></i> -->
+									Cetak SKPI
 								</a>
 								<!-- <a type="button" id="link2" class="btn btn-primary">Download</a> -->
 							</p>
@@ -258,38 +259,38 @@ $this->title = 'Capaian Pembelajaran Lulusan Per Individu';
 		<div id="nilai1" class="tab-pane fade in active">
 			<div id="container" style="width: 50%, center;">
 				<ul class="nav nav-tabs">
-					<?php for($x = 0;$x < count($eval);$x++): ?>
-					<li><a data-toggle="tab" href="#cpmk<?= $x + 1 ?>">CPL <?= $x + 1 ?></a></li>
+					<?php for ($x = 0; $x < count($eval); $x++) : ?>
+						<li><a data-toggle="tab" href="#cpmk<?= $x + 1 ?>">CPL <?= $x + 1 ?></a></li>
 					<?php endfor; ?>
 				</ul>
 				<div class="tab-content">
-					<?php for($z = 1;$z <= count($eval);$z++): ?>
-					<div class="tab-pane fade in active" id="cpmk<?= $z ?>">
-						<table class="table table-striped" style="table-layout: fixed">
-							<thead>
-								<tr>
-								<th scope="col">No</th>
-								<th scope="col">Nilai</th>
-								<th scope="col">Ref Cpmk</th>
-								<th scope="col">Mata Kuliah</th>
-								<th scope="col">Dosen</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $no=1; ?>
-								<?php for($y = 0;$y < count($eval[$z]);$y++): ?>
+					<?php for ($z = 1; $z <= count($eval); $z++) : ?>
+						<div class="tab-pane fade in active" id="cpmk<?= $z ?>">
+							<table class="table table-striped" style="table-layout: fixed">
+								<thead>
 									<tr>
-										<th scope="row"><?= $no ?></th>
-										<td><?= $eval[$z][$y]['nilai'] ?></td>
-										<td><?= $eval[$z][$y]['refCpmk']['isi'] ?></td>
-										<td><?= $eval[$z][$y]['mataKuliah']['nama'] ?></td>
-										<td><?= $eval[$z][$y]['dosen']['nama_dosen'] ?></td>
+										<th scope="col">No</th>
+										<th scope="col">Nilai</th>
+										<th scope="col">Ref Cpmk</th>
+										<th scope="col">Mata Kuliah</th>
+										<th scope="col">Dosen</th>
 									</tr>
-								<?php $no++; ?>
-								<?php endfor; ?>
-							</tbody>
-						</table>
-					</div>
+								</thead>
+								<tbody>
+									<?php $no = 1; ?>
+									<?php for ($y = 0; $y < count($eval[$z]); $y++) : ?>
+										<tr>
+											<th scope="row"><?= $no ?></th>
+											<td><?= $eval[$z][$y]['nilai'] ?></td>
+											<td><?= $eval[$z][$y]['refCpmk']['isi'] ?></td>
+											<td><?= $eval[$z][$y]['mataKuliah']['nama'] ?></td>
+											<td><?= $eval[$z][$y]['dosen']['nama_dosen'] ?></td>
+										</tr>
+										<?php $no++; ?>
+									<?php endfor; ?>
+								</tbody>
+							</table>
+						</div>
 					<?php endfor; ?>
 				</div>
 			</div>
