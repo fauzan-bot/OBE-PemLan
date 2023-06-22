@@ -65,7 +65,7 @@ class RefMahasiswa extends \yii\db\ActiveRecord
             [['nim'], 'string', 'max' => 16],
             [['nama'], 'string', 'max' => 128],
             [['created_user', 'updated_user'], 'string', 'max' => 255],
-            [['ttl', 'tgl_masuk', 'tgl_lulus', 'no_skpi'], 'string', 'max' => 111],
+            [['ttl', 'tgl_masuk', 'tgl_lulus', 'noskpi'], 'string', 'max' => 111],
         ];
     }
 
@@ -88,7 +88,7 @@ class RefMahasiswa extends \yii\db\ActiveRecord
             'tgl_masuk' => 'Tanggal Masuk',
             'tgl_lulus' => 'Tanggal Lulus',
             'total_sks' => 'Total SKS',
-            'no_skpi' => 'Nomor SKPI',
+            'noskpi' => 'Nomor SKPI',
         ];
     }
 

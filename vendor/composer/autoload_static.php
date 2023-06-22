@@ -177,10 +177,12 @@ class ComposerStaticInit91c8acd947a6af07f01ede7ff7fcc475
             'Prophecy\\' => 9,
             'PhpOption\\' => 10,
             'PhpOffice\\PhpSpreadsheet\\' => 25,
+            'PHPStan\\PhpDocParser\\' => 21,
         ),
         'M' => 
         array (
             'MyCLabs\\Enum\\' => 13,
+            'Mpdf\\PsrLogAwareTrait\\' => 22,
             'Mpdf\\' => 5,
             'Matrix\\' => 7,
         ),
@@ -191,10 +193,6 @@ class ComposerStaticInit91c8acd947a6af07f01ede7ff7fcc475
         'I' => 
         array (
             'Imagine\\' => 8,
-        ),
-        'H' => 
-        array (
-            'Http\\Message\\' => 13,
         ),
         'G' => 
         array (
@@ -214,6 +212,7 @@ class ComposerStaticInit91c8acd947a6af07f01ede7ff7fcc475
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\Common\\Lexer\\' => 22,
             'DeepCopy\\' => 9,
         ),
@@ -615,8 +614,8 @@ class ComposerStaticInit91c8acd947a6af07f01ede7ff7fcc475
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -642,9 +641,17 @@ class ComposerStaticInit91c8acd947a6af07f01ede7ff7fcc475
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
         ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
+        ),
         'MyCLabs\\Enum\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
+        ),
+        'Mpdf\\PsrLogAwareTrait\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/psr-log-aware-trait/src',
         ),
         'Mpdf\\' => 
         array (
@@ -661,10 +668,6 @@ class ComposerStaticInit91c8acd947a6af07f01ede7ff7fcc475
         'Imagine\\' => 
         array (
             0 => __DIR__ . '/..' . '/imagine/imagine/src',
-        ),
-        'Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -694,9 +697,13 @@ class ComposerStaticInit91c8acd947a6af07f01ede7ff7fcc475
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+            0 => __DIR__ . '/..' . '/doctrine/lexer/src',
         ),
         'DeepCopy\\' => 
         array (

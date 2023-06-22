@@ -176,7 +176,7 @@ $this->title = 'Capaian Pembelajaran Lulusan Alumni Per Individu';
 							<p align="right">
 								<?= Html::a('Transkip Nilai', ['/capaian-mahasiswa/download-transkip/', 'jk' => $id_mahasiswa], ['class' => 'btn btn-success']) ?>
 								<a id="download" download="ChartImage.jpg" class="btn btn-primary float-right bg-flat-color-1" title="Download">
-									<i class="fa fa-download"></i>
+									Cetak SKPI
 								</a>
 							</p>
 						</div>

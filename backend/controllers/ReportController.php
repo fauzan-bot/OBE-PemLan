@@ -80,7 +80,10 @@ class ReportController extends Controller
 
     public function actionLandingSkpi($jk)
     {
-        if ($model = Yii::$app->request->post()) {
+        $model = $this->findModel($jk);
+
+        // Check if the request is a POST request and the model is loaded with data
+        if ($model->load(Yii::$app->request->post())) {
             $data['refCpl']        = RefCpl::find()->where(['status' => 1])->all();
             $data['setupAplikasi'] = SetupAplikasi::find()->one();
             $data['setupPrint']    = $model;
@@ -194,40 +197,6 @@ class ReportController extends Controller
         exit;
     }
 
-    public function actionSavexx($jk)
-    {
-        $model = $this->findModel($jk);
-        // Mengecek apakah request adalah POST
-        if ($model->load(Yii::$app->request->post())) {
-            // Mengambil data dari POST request
-            $nama = Yii::$app->request->post('nama');
-            $nim = Yii::$app->request->post('nim');
-            $ttl = Yii::$app->request->post('ttl');
-            $tgl_masuk = Yii::$app->request->post('tgl_masuk');
-            $tgl_lulus = Yii::$app->request->post('tgl_lulus');
-            $total_sks = Yii::$app->request->post('total_sks');
-            $no_skpi = Yii::$app->request->post('no_skpi');
-
-            // Lakukan validasi data jika diperlukan
-            // Simpan data ke database menggunakan model atau metode lainnya
-            // Contoh: menggunakan ActiveRecord
-            $model = new RefMahasiswa(); // Ganti "YourModel" dengan model yang sesuai
-            $model->nama = $nama;
-            $model->nim = $nim;
-            $model->ttl = $ttl;
-            $model->tgl_masuk = $tgl_masuk;
-            $model->tgl_lulus = $tgl_lulus;
-            $model->total_sks = $total_sks;
-            $model->no_skpi = $no_skpi;
-            $model->save();
-
-            return $this->redirect(['landing-skpi', 'jk' => $model->id]);
-        }
-        return $this->render('landing-skpi', [
-            'data' => $model,
-        ]);
-    }
-
     public function actionSave($jk)
     {
         $model = $this->findModel($jk);
@@ -236,11 +205,12 @@ class ReportController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             // Save the model
             if ($model->save()) {
+                Yii::$app->session->setFlash('warning', [['Save', 'Berhasil Menyimpan Data']]);
                 // Redirect to the landing-skpi page with the saved model ID
                 return $this->redirect(['landing-skpi', 'jk' => $model->id]);
             } else {
                 // Handle the case when saving fails
-                Yii::$app->session->setFlash('error', 'Failed to save data.');
+                Yii::$app->session->setFlash('error', 'Gagal Menyimpan Data');
             }
         }
 
@@ -256,37 +226,5 @@ class ReportController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
-    }
-
-    // public function actionUpdate($jk)
-    // {
-    //     $model = $this->findModel($jk);
-
-    //     if ($model->load(Yii::$app->request->post())) {
-    //         $model->updated_user = Yii::$app->user->identity->username;
-    //         $model->save();
-    //         Yii::$app->session->setFlash('warning', [['Update', 'Data Berhasil Diperbarui']]);
-    //         return $this->redirect(['monev-cpl/individual', 'id' => $model->id]);
-    //     }
-
-    //     return $this->render('landing-skpi', [
-    //         'data' => $model,
-    //     ]);
-    // }
-
-    public function actionUpdate($jk)
-    {
-        $model = RefMahasiswa::findOne($jk);
-        if (!$model) {
-            throw new NotFoundHttpException('Data not found.');
-        }
-
-        if ($model->load(Yii::$app->request->post())) {
-            $model->save();
-            Yii::$app->session->setFlash('success', 'Data saved successfully.');
-            return $this->redirect(['monev-cpl/individual', 'jk' => $model->id]);
-        }
-
-        return $this->render('landing-skpi', ['data' => $model]);
     }
 }

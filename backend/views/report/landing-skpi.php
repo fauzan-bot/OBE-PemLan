@@ -43,7 +43,7 @@ $this->registerJs($js);
             <div class="input-group col-sm-10">
                 <?= $form->field($data, 'tgl_masuk')->label(false)->textInput(['maxlength' => true])->widget(\kartik\date\DatePicker::class, [
                     'options' => ['placeholder' => 'Pilih Tanggal ...'],
-                    'language' => 'id',
+                    // 'language' => 'id',
                     'type' => DatePicker::TYPE_COMPONENT_APPEND,
                     'pluginOptions' => [
                         'autoclose' => true,
@@ -60,7 +60,7 @@ $this->registerJs($js);
                         \kartik\date\DatePicker::class,
                         [
                             'options' => ['placeholder' => 'Pilih Tanggal ...'],
-                            'language' => 'id',
+                            // 'language' => 'id',
                             'type' => DatePicker::TYPE_COMPONENT_APPEND,
                             'pluginOptions' => [
                                 'autoclose' => true,
@@ -88,20 +88,63 @@ $this->registerJs($js);
         <div class="form-group" style="margin-top: -10px;">
             <label class="col-sm-2 control-label" style="margin-top: 22px;">Nomor SKPI</label>
             <div class="input-group col-sm-10">
-                <?= $form->field($data, 'no_skpi')->label(false)->textInput(['maxlength' => true]) ?>
+                <?= $form->field($data, 'noskpi')->label(false)->textInput(['maxlength' => true]) ?>
             </div>
         </div>
+
+        <?php
+        $js = <<<JS
+        $(document).ready(function() {
+            // Menonaktifkan tombol "Print" secara default
+            $('#printButton').prop('disabled', true);
+
+            // Mengaktifkan tombol "Print" jika semua form telah terisi
+            $('input, select').on('change', function() {
+                checkFormValues();
+            });
+
+            // Mengecek nilai form saat halaman dimuat
+            checkFormValues();
+
+            function checkFormValues() {
+                var isFormFilled = true;
+                $('input, select').each(function() {
+                    // Mengecek jika nilai form tidak kosong dan bukan placeholder
+                    if ($(this).val() === '' || $(this).val() === $(this).attr('placeholder')) {
+                        isFormFilled = false;
+                        return false;
+                    }
+                });
+                $('#printButton').prop('disabled', !isFormFilled);
+            }
+        });
+        JS;
+        $this->registerJs($js);
+        ?>
+
         <div class="form-group">
             <div class="col-sm-10">
-                <?= Html::button(
-                    'Back',
-                    [
-                        'name' => 'btnBack',
-                        'class' => 'btn btn-danger',
-                        'onclick' => "window.location.href='" . Yii::$app->urlManager
-                            ->createUrl(['monev-cpl/individual', 'jk' => $data->id]) . "';",
-                    ]
-                ); ?>
+                <?php if ($data->status === 8) { ?>
+                    <?= Html::button(
+                        'Back',
+                        [
+                            'name' => 'btnBack',
+                            'class' => 'btn btn-danger',
+                            'onclick' => "window.location.href='" . Yii::$app->urlManager
+                                ->createUrl(['monev-cpl/index', 'jk' => $data->id]) . "';",
+                        ]
+                    ); ?>
+                <?php } else { ?>
+                    <?= Html::button(
+                        'Back',
+                        [
+                            'name' => 'btnBack',
+                            'class' => 'btn btn-danger',
+                            'onclick' => "window.location.href='" . Yii::$app->urlManager
+                                ->createUrl(['monev-cpl/individual', 'jk' => $data->id]) . "';",
+                        ]
+                    ); ?>
+                <?php } ?>
                 <?= Html::submitButton(
                     'Save',
                     [
@@ -111,7 +154,7 @@ $this->registerJs($js);
                     ]
                 )
                 ?>
-                <?= Html::submitButton('Print', ['class' => 'btn btn-primary']) ?>
+                <?= Html::submitButton('Print', ['class' => 'btn btn-primary', 'id' => 'printButton']) ?>
             </div>
         </div>
 
